@@ -125,6 +125,15 @@ public class SortedArrayMap<K extends Comparable<K>, V> implements Map<K, V> {
     }
   }
 
+  // The Iterable that entries() returns. Each call to iterator() starts a new traversal.
+  private class Entries implements Iterable<Map.Entry<K, V>> {
+    @Override
+    public Iterator<Map.Entry<K, V>> iterator() {
+      // TODO: Implement me
+      throw new UnsupportedOperationException("TODO: Implement me");
+    }
+  }
+
   // Walks the filled prefix of both arrays, building a Pair for each index.
   private class EntryIterator implements Iterator<Map.Entry<K, V>> {
     private int cursor = 0;  // index of the pair that comes next
