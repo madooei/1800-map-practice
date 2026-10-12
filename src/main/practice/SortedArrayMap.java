@@ -99,12 +99,7 @@ public class SortedArrayMap<K extends Comparable<K>, V> implements Map<K, V> {
 
   @Override
   public Iterable<Map.Entry<K, V>> entries() {
-    return new Iterable<Map.Entry<K, V>>() {
-      @Override
-      public Iterator<Map.Entry<K, V>> iterator() {
-        return new EntryIterator();
-      }
-    };
+    return new Entries();
   }
 
   // Returns the index of key, or -1 if key is not found.
@@ -183,6 +178,14 @@ public class SortedArrayMap<K extends Comparable<K>, V> implements Map<K, V> {
         throw new NoSuchElementException();
       }
       return keys[cursor++];
+    }
+  }
+
+  // The Iterable that entries() returns. Each call to iterator() starts a new traversal.
+  private class Entries implements Iterable<Map.Entry<K, V>> {
+    @Override
+    public Iterator<Map.Entry<K, V>> iterator() {
+      return new EntryIterator();
     }
   }
 

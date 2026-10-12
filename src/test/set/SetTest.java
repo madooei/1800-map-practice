@@ -1,6 +1,7 @@
 package set;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -318,10 +319,8 @@ public abstract class SetTest {
     for (Integer x : set) {
       seen.add(x);
     }
-    assertEquals(3, seen.size());
-    assertTrue(seen.contains(1));
-    assertTrue(seen.contains(2));
-    assertTrue(seen.contains(3));
+    Collections.sort(seen);
+    assertEquals(threeElements(), seen);
   }
 
   @Test
@@ -334,10 +333,8 @@ public abstract class SetTest {
     seen.add(it.next());
     seen.add(it.next());
     seen.add(it.next());
-    assertEquals(3, seen.size());
-    assertTrue(seen.contains(1));
-    assertTrue(seen.contains(2));
-    assertTrue(seen.contains(3));
+    Collections.sort(seen);
+    assertEquals(threeElements(), seen);
   }
 
   @Test
@@ -431,5 +428,14 @@ public abstract class SetTest {
     } catch (IllegalArgumentException e) {
       return;
     }
+  }
+
+  // The elements 1, 2, 3, in ascending order.
+  private List<Integer> threeElements() {
+    List<Integer> elements = new ArrayList<>();
+    elements.add(1);
+    elements.add(2);
+    elements.add(3);
+    return elements;
   }
 }
