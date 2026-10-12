@@ -1,7 +1,6 @@
 package practice;
 
 import java.util.Iterator;
-import map.ArrayMap;
 import map.Map;
 import set.Set;
 
@@ -12,43 +11,39 @@ import set.Set;
  */
 public class MapSet<T> implements Set<T> {
 
-  private Map<T, Boolean> map;  // the elements are the keys; every value is true
 
   public MapSet() {
-    map = new ArrayMap<>();
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   @Override
   public boolean add(T item) {
-    if (item == null) {
-      throw new IllegalArgumentException();
-    }
-    return map.put(item, true);  // put reports whether the key was new
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   @Override
   public boolean remove(T item) {
-    if (item == null) {
-      throw new IllegalArgumentException();
-    }
-    return map.remove(item);
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   @Override
   public boolean contains(T item) {
-    if (item == null) {
-      throw new IllegalArgumentException();
-    }
-    return map.containsKey(item);
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   @Override
   public int size() {
-    return map.size();
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   @Override
   public Iterator<T> iterator() {
-    return map.iterator();  // the map iterates over its keys, which are the elements
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 }
