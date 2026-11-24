@@ -48,7 +48,7 @@ code/
 - `scripts/test.sh practice.MapSetTest` — compiles everything and runs only that test class.
 - `scripts/run.sh demo.SortedArrayMapDemo` — compiles everything and runs that one demo. Every class you implement has its own demo, `<Class>Demo`.
 
-## What's here
+## Contents
 
 - `map.Map<K, V>` — the chapter's `Map` ADT, including `Map.Entry`. It is copied here unchanged, so this problem's code compiles and runs on its own.
 - `practice.SortedArrayMap<K extends Comparable<K>, V>` — the sorted map. A binary-search helper finds a key or the position where it belongs. `put` and `remove` shift both arrays to keep them in step. The entry iterator builds each `Map.Entry` from the two arrays as it goes.
