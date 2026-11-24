@@ -25,6 +25,9 @@ code/
       practice/
         SortedArrayMap.java             # parallel sorted arrays, binary-search lookup
         MapSet.java                     # a set stored as the keys of a map
+      demo/                             # one demo per solution class
+        SortedArrayMapDemo.java
+        MapSetDemo.java
     test/
       map/
         MapTest.java                    # the chapter's Map contract suite, vendored
@@ -35,6 +38,7 @@ code/
         MapSetTest.java                 # SetTest plus checks on the backing map
   scripts/
     test.sh                             # compile and run every JUnit test
+    run.sh                              # compile and run one demo
 ```
 
 ## How to compile and run
@@ -42,8 +46,7 @@ code/
 - `scripts/test.sh` — compiles everything and runs the full JUnit suite.
 - `scripts/test.sh practice.SortedArrayMapTest` — compiles everything and runs only that test class.
 - `scripts/test.sh practice.MapSetTest` — compiles everything and runs only that test class.
-
-There are no demo programs for these problems; the tests are how you check your work.
+- `scripts/run.sh demo.SortedArrayMapDemo` — compiles everything and runs that one demo. Every class you implement has its own demo, `<Class>Demo`.
 
 ## What's here
 
@@ -56,3 +59,4 @@ There are no demo programs for these problems; the tests are how you check your 
 - `practice.MapSet<T>` — the set backed by a map. It stores each element as a key of an `ArrayMap<T, Boolean>` with the value `true`, and passes `add`, `remove`, `contains`, and `size` on to the map. Its iterator is the map's key iterator.
 - `set.SetTest` — the abstract contract suite for `Set`, copied from the iterator chapter. `MapSetTest` extends it.
 - `practice.MapSetTest` — runs the contract suite against `MapSet`, and also reads the set's private `Map` field through reflection to check that the elements are stored as its keys.
+- `demo.SortedArrayMapDemo`, `demo.MapSetDemo` — one demo per solution class, each on an example from the notes.
